@@ -1,25 +1,27 @@
 let mytable = document.querySelector(".myTable");
 let color = document.querySelector(".color1");
-let btn = document.querySelector(".btn")
-let td = document.querySelectorAll("td")
+let btn = document.querySelector(".btn");
+let td = document.querySelectorAll("td");
 
-console.log(td[2]);
 
-let colorCell = '';
+let colorCell = '#000000';
 let tablenum = '';
-let myTableColor = '#ffffff'
+let myTableColor = '#ffffff';
+let borderCell = "2px solid #000000";
 
-color.addEventListener('input', inputColor)
+color.addEventListener('input', inputColor);
+mytable.addEventListener('click', clickTable);
+btn.addEventListener('click', clickBtn);
+
 function inputColor (e) {
     colorCell = e.target.value
 }
 
-mytable.addEventListener('click', clickTable)
 function clickTable (e) {    
-    tablenum = e.target
-    console.log(e.target);
+    tablenum = e.target;
+    tablenum.style.border = borderCell;
 }
-btn.addEventListener('click', clickBtn)
+
 function clickBtn () {
     for(let i = 0; i < td.length; i++) {
         td[i].style.backgroundColor = colorCell;
